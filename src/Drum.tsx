@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AudioClip } from "./types";
 import { audioClips } from "./audioClipsOne";
 import { audioClipsTwo } from "./audioClipsTwo";

@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css'
-import { AudioClip } from './types'
 import Drum from './Drum'
 import { audioClips } from './audioClipsOne'
-import { audioClipsTwo } from './audioClipsTwo'
 import Switch from './Switch'
 
 
 function App() {
   const [isPowerOn, setIsPowerOn] = useState(true);
-  const [audioBank, setAudioBank] = useState(audioClips);
+  const [audioBank] = useState(audioClips);
   const [isBankTwoSelected, setIsBankTwoSelected] = useState(false);
 
   const playAudio = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -21,10 +19,10 @@ function App() {
     document.getElementById("drum-" + clip.keyTrigger)?.focus();
     document.getElementById("display")!.innerText = clip.description;
   };
-  function handlePower(event:React.ChangeEvent<HTMLInputElement>){
+  function handlePower(){
     setIsPowerOn(!isPowerOn);
   }
-  function handleBank(event:React.ChangeEvent<HTMLInputElement>){
+  function handleBank(){
     setIsBankTwoSelected(!isBankTwoSelected);
   }
 
